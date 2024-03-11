@@ -13,7 +13,7 @@ class PasswordManager():
     def _xor(self, _master_password: str, _password: str) -> str:
         return ''.join(chr(ord(a) ^ ord(b)) for a,b in zip(_master_password, _password)).encode("utf-8").hex()
 
-    def check_master_password(_master_password) -> bool:
+    def check_master_password(self, _master_password) -> bool:
         _password_hash = sha256(_master_password.encode("utf-8")).hexdigest()
         with open(_PASSWORD_FILE, "r") as f:
             _stored_password: str = f.readline()

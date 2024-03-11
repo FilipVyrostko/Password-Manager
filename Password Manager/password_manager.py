@@ -25,10 +25,6 @@ class PasswordManager():
                 sys.stderr.write("\n\tFailed to verify master password.\n")
                 time.sleep(5)
                 return False
-        
-    
-    def check_master_password(self, _master_password):
-        return True
     
     def delete_single_password(self, _master_password: str, _password: str, _desc: str, _date: str):
         _password = self._xor(_master_password, _password)
